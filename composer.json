@@ -1,0 +1,34 @@
+{
+    "name": "bangergames/steam-game-server-login-token",
+    "description": "Steam Game Server Login Token",
+    "homepage": "https://github.com/bangergames/steam-game-server-login-token",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kenan Duman",
+            "email": "kenanduman1988@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "laravel/framework": "^6.0|^7.0|^8.0",
+        "guzzlehttp/guzzle": "^6.2 || ^7.0",
+        "illuminate/support": "~5.6 || ~6.0 || ~7.0 || ~8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BangerGames\\SteamGameServerLoginToken\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BangerGames\\SteamGameServerLoginToken\\BangerGamesServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
