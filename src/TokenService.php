@@ -23,10 +23,10 @@ class TokenService
     {
         $client = new Client();
 
-        $url = $this->url.$this->interface.'/'.$method.'/'.$this->version.'/';
+        $url = $this->url . $this->interface . '/' . $method . '/' . $this->version . '/';
 
         if ($requestMethod === 'GET') {
-            $response = $client->get($url.'?'.http_build_query([
+            $response = $client->get($url . '?' . http_build_query([
                     'key' => $this->getApiKey(),
                     'format' => 'json',
                     'input_json' => $arguments,
@@ -34,7 +34,7 @@ class TokenService
         }
 
         if ($requestMethod === 'POST') {
-            $response = $client->post($url.'?'.http_build_query([
+            $response = $client->post($url . '?' . http_build_query([
                     'key' => $this->getApiKey(),
                     'format' => 'json',
                     'input_json' => json_encode($arguments),
@@ -56,8 +56,8 @@ class TokenService
 
     /**
      * 730: csgo
-     * @param  int  $appId
-     * @param  string  $memo
+     * @param int $appId
+     * @param string $memo
      * @return mixed
      */
     public function createAccount(int $appId = 730, string $memo = 'bangergames')
@@ -69,8 +69,8 @@ class TokenService
     }
 
     /**
-     * @param  string  $steamId
-     * @param  string  $memo
+     * @param string $steamId
+     * @param string $memo
      * @return mixed
      */
     public function setMemo(string $steamId, string $memo = 'bangergames')
@@ -82,7 +82,7 @@ class TokenService
     }
 
     /**
-     * @param  int  $steamId
+     * @param int $steamId
      * @return mixed
      */
     public function resetLoginToken(int $steamId)
@@ -93,7 +93,7 @@ class TokenService
     }
 
     /**
-     * @param  int  $steamId
+     * @param int $steamId
      * @return mixed
      */
     public function deleteAccount(int $steamId)
@@ -105,7 +105,7 @@ class TokenService
     }
 
     /**
-     * @param  int  $steamId
+     * @param int $steamId
      * @return mixed
      */
     public function getAccountPublicInfo(int $steamId)
@@ -115,11 +115,8 @@ class TokenService
         ]);
     }
 
-
-
-
     /**
-     * @param  string  $loginToken
+     * @param string $loginToken
      * @return mixed
      */
     public function queryLoginToken(string $loginToken)
@@ -130,9 +127,9 @@ class TokenService
     }
 
     /**
-     * @param  string  $steamId
-     * @param  bool  $banned
-     * @param  int  $banSeconds
+     * @param string $steamId
+     * @param bool $banned
+     * @param int $banSeconds
      * @return mixed
      */
     public function setBanStatus(string $steamId, bool $banned = false, int $banSeconds = 60)
@@ -145,7 +142,7 @@ class TokenService
     }
 
     /**
-     * @param  string  $serverIps
+     * @param string $serverIps
      * @return mixed
      */
     public function getServerSteamIDsByIP(string $serverIps)
@@ -156,7 +153,7 @@ class TokenService
     }
 
     /**
-     * @param  int  $serverSteamIds
+     * @param int $serverSteamIds
      * @return mixed
      */
     public function getServerIPsBySteamID(int $serverSteamIds)
