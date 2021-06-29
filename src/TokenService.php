@@ -97,7 +97,6 @@ class TokenService
      * @return mixed
      */
     public function deleteAccount(int $steamId)
-
     {
         return $this->getResponse('DeleteAccount', 'POST', [
             'steamId' => $steamId
